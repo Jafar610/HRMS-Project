@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="ICT Team" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WRU-CHRMS</title>
+    <link rel="shortcut icon" href="/Dashboard/assets/img/wlogo2.png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="Assets/css/main.css" />
+    <!-- <script src="/Assets/js/session.js" type="module"></script> -->
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="/Assets/img/wlogo.png" alt="WRU Logo" />
+          <span class="logo-name text-center">CHRMS</span>
+        </a>
+        <div class="ms-auto" id="login">
+          <button
+            type="button"
+            class="btn btn-get-started"
+            data-bs-toggle="modal"
+            data-bs-target="#loginModal"
+          >
+            Login
+          </button>
+        </div>
+        <div class="ms-auto" id="logout" style="display: none">
+          <button type="button" class="btn btn-get-started">Logout</button>
+        </div>
+      </div>
+    </nav>
+    <section
+      class="hero-section d-flex flex-column justify-content-center align-items-center text-center"
+      style="font-family: tahoma; max-width: 90%; margin: auto"
+    >
+      <h1>Welcome To Competency And Human Resource Management System</h1>
+      <p>Knowledge For Excellence.</p>
+    </section>
+
+    <!-- Login Modal -->
+    <div
+      id="alertContainer"
+      style="
+        position: fixed;
+        top: 1rem;
+        right: 23rem;
+        text-align: center;
+        z-index: 3000;
+        width: 50%;
+      "
+    ></div>
+    <div
+      class="modal fade"
+      id="loginModal"
+      tabindex="-1"
+      aria-labelledby="loginModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content p-3">
+          <div class="modal-header">
+            <h5 class="modal-title ms-auto fs-2" id="loginModalLabel">Login</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body mt-2">
+            <form id="loginForm">
+              <div class="mb-3 input-group">
+                <span class="input-group-text">
+                  <i class="fas fa-user"></i>
+                </span>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="username"
+                  placeholder="Username"
+                  required
+                />
+                <div class="invalid-feedback">
+                  <!-- Password must be at least 8 characters long. -->
+                </div>
+              </div>
+              <div class="mb-3 input-group">
+                <span class="input-group-text">
+                  <i class="fas fa-lock"></i>
+                </span>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="password"
+                  placeholder="Password"
+                  required
+                />
+                <div class="invalid-feedback"></div>
+              </div>
+              <div class="text-end mb-3">
+                <a
+                  href="#"
+                  class="link-primary"
+                  data-bs-toggle="modal"
+                  data-bs-target="#forgotPasswordModal"
+                  data-bs-dismiss="modal"
+                  >Forgot Password?</a
+                >
+              </div>
+              <button
+                type="submit"
+                class="btn btn-primary w-100"
+                style="
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  gap: 20px;
+                "
+              >
+                <span>Login</span>
+                <span
+                  class="spinner-border spinner-border-sm d-none"
+                  role="status"
+                  aria-hidden="true"
+                ></span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Forgot Password Modal -->
+    <div
+      class="modal fade"
+      id="forgotPasswordModal"
+      tabindex="-1"
+      aria-labelledby="forgotPasswordModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content p-3">
+          <div class="modal-header">
+            <h5 class="modal-title ms-auto fs-2" id="forgotPasswordModalLabel">
+              Forgot Password
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body mt-2">
+            <form id="forgetPasswordForm">
+              <!-- <div class="text-center mb-1">
+                  <div class="spinner-border text-primary d-none" role="status"></div>
+                </div> -->
+              <div class="mb-3 input-group">
+                <span class="input-group-text">
+                  <i class="fas fa-envelope"></i>
+                </span>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="Enter your email"
+                  required
+                />
+                <div class="invalid-feedback">
+                  <!-- Password must be at least 8 characters long. -->
+                </div>
+              </div>
+              <!-- <div class="text-center mb-2">
+                <div id="spinner" class="spinner-border spinner-border-sm text-primary" role="status" style="display: none;" >
+                  <span class="visually-hidden">Loading...</span>
+                </div>
+              </div> -->
+              <button
+                type="submit"
+                class="btn btn-primary w-100"
+                style="
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  gap: 20px;
+                "
+              >
+                <span>Send Reset Link</span>
+                <span
+                  class="spinner-border spinner-border-sm d-none"
+                  role="status"
+                  aria-hidden="true"
+                ></span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/Assets/js/api/home.js" type="module"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

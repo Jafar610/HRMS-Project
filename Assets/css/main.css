@@ -1,0 +1,244 @@
+body {
+        background: url("../img/wruimage.png") no-repeat center center fixed;
+        background-size: cover;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 0;
+        pointer-events: none;
+      }
+      body,
+      .navbar,
+      .hero-section,
+      .modal-content {
+        position: relative;
+        z-index: 1;
+      }
+      .navbar {
+        background: transparent;
+        box-shadow: none;
+        border: none;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+      }
+      .navbar-brand img {
+        height: 80px;
+        margin-left: 10px;
+      }
+      .logo-name {
+        font-family: Tahoma;
+        font-size: 1.8rem;
+        color: #e9dfd8;
+        margin-left: 5px;
+        font-weight: bold;
+      }
+      .btn-get-started {
+        background-color: #dc3545;
+        padding: 5px 30px;
+        font-size: 1.4rem;
+        color: white;
+        border-radius: 10px;
+        margin-right: 30px;
+        text-align: center;
+        transition: background-color 0.3s ease, border 0.3s ease, color 0.3s ease;
+      }
+      .btn-get-started:hover {
+        background-color: transparent;
+        border: 3px solid #dc3545;
+        color: #f2e4e5;
+      }
+      .hero-section {
+        min-height: 80vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+      }
+      @keyframes slideDownFade {
+        0% {
+          opacity: 0;
+          transform: translateY(-40px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes slideUpFade {
+        0% {
+          opacity: 0;
+          transform: translateY(40px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .hero-section h1 {
+        font-size: 4rem;
+        margin-bottom: 1rem;
+        animation: slideDownFade 1s ease-out;
+      }
+      .hero-section p {
+        font-size: 1.5rem;
+        animation: slideUpFade 1.2s ease-out;
+      }
+      .modal-dialog {
+        max-width: 400px;
+        margin: auto;
+      }
+      .modal-content {
+        border-radius: 15px;
+        border: none;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        animation: fadeIn 0.3s ease-in-out;
+      }
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .modal-header {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+      .modal-title {
+        font-family: Tahoma;
+        font-weight: 700;
+        color: #2c3e50;
+      }
+      .btn-close:hover {
+        background-color: #e81c30;
+        opacity: 0.8;
+      }
+      .input-group-text {
+        background-color: #f1f3f5;
+        border-radius: 10px 0 0 10px;
+        color: #495057;
+      }
+      .form-control {
+        border-radius: 0 10px 10px 0;
+        border: 1px solid #ced4da;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+      }
+      .form-control:focus {
+        border-color: #dc3545;
+        box-shadow: 0 0 5px rgba(220, 53, 69, 0.5);
+      }
+      .btn-primary {
+        background-color: #dc3545;
+        border: none;
+        border-radius: 10px;
+        padding: 12px;
+        font-weight: 600;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+      }
+      .btn-primary:hover {
+        background-color: #c82333;
+        transform: translateY(-2px);
+      }
+      .link-primary {
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: #dc3545;
+        transition: color 0.3s ease;
+      }
+      .link-primary:hover {
+        color: #c82333;
+        text-decoration: underline;
+      }
+      .invalid-feedback {
+        font-size: 0.8rem;
+        color: #dc3545;
+      }
+      @media (max-width: 576px) {
+        .modal-dialog {
+          margin: 1rem;
+        }
+        .hero-section h1 {
+          font-size: 2.5rem;
+        }
+        .hero-section p {
+          font-size: 1.2rem;
+        }
+        .navbar-brand img {
+          height: 60px;
+        }
+        .logo-name {
+          font-size: 1.5rem;
+        }
+        .btn-get-started {
+          font-size: 1.2rem;
+          padding: 5px 20px;
+        }
+      }
+      .card {
+        position: relative;
+        z-index: 1;
+      }
+      .card {
+        border-radius: 15px;
+        border: none;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        animation: fadeIn 0.3s ease-in-out;
+        max-width: 400px;
+        margin: auto;
+      }
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .card-header {
+        border-bottom: none;
+        padding-bottom: 0;
+        text-align: center;
+      }
+      .card-title {
+        font-family: Tahoma;
+        font-weight: 700;
+        color: #2c3e50;
+        font-size: 2rem;
+      }
+      .input-group-text {
+        background-color: #f1f3f5;
+        border-radius: 10px 0 0 10px;
+        color: #495057;
+      }
+      .form-control {
+        border-radius: 0 10px 10px 0;
+        border: 1px solid #ced4da;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+      }
+      .form-control:focus {
+        border-color: #dc3545;
+        box-shadow: 0 0 5px rgba(220, 53, 69, 0.5);
+      }
+      .btn-primary {
+        background-color: #dc3545;
+        border: none;
+        border-radius: 10px;
+        padding: 12px;
+        font-weight: 600;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+      }
+      .btn-primary:hover {
+        background-color: #c82333;
+        transform: translateY(-2px);
+      }
+      .invalid-feedback {
+        font-size: 0.8rem;
+        color: #dc3545;
+      }
+      @media (max-width: 576px) {
+        .card {
+          margin: 1rem;
+        }
+      }
